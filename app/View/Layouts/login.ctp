@@ -6,7 +6,7 @@ $description = __d('title', 'Your Kanban Board');
     <head>
         <?php echo $this->Html->charset(); ?>
         <title>
-            <?php echo $description ?>:
+            <?php echo $description; ?>:
             <?php echo $title_for_layout; ?>
         </title>
         
@@ -56,7 +56,7 @@ $description = __d('title', 'Your Kanban Board');
                             </ul>
                             <p class="navbar-text pull-right">Logged in as <a href="#"><?php echo $user_details['fullname']; ?></a></p>
                         </div><!--/.nav-collapse -->
-                    <? } ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>

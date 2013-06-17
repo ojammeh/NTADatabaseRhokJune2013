@@ -37,7 +37,7 @@ class AppController extends Controller {
         'Session',
         'RequestHandler',
         'Auth' => array(
-            'loginRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
+            'loginRedirect' => array('controller' => 'institutions', 'action' => 'index', 'home'),
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login')
         )
     );
@@ -46,6 +46,7 @@ class AppController extends Controller {
         parent::beforeRender();
         $this->set('user_details', $this->Auth->user());
 		$this->set('app_name', 'NTA Institution Management System');
+		$this->set('institution_id', $this->getInstitutionId());
         
     }
 	

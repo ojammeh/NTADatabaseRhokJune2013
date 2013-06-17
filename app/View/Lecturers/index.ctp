@@ -7,10 +7,7 @@
 			<th><?php echo $this->Paginator->sort('firstname'); ?></th>
 			<th><?php echo $this->Paginator->sort('lastname'); ?></th>
 			<th><?php echo $this->Paginator->sort('institution_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('primaryphonenumber'); ?></th>
-			<th><?php echo $this->Paginator->sort('secondaryphonenumber'); ?></th>
-			<th><?php echo $this->Paginator->sort('address'); ?></th>
-			<th><?php echo $this->Paginator->sort('nationality'); ?></th>
+
 			<th><?php echo $this->Paginator->sort('email'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
@@ -24,10 +21,7 @@
 		<td>
 			<?php echo $this->Html->link($lecturer['Institution']['name'], array('controller' => 'institutions', 'action' => 'view', $lecturer['Institution']['id'])); ?>
 		</td>
-		<td><?php echo h($lecturer['Lecturer']['primaryphonenumber']); ?>&nbsp;</td>
-		<td><?php echo h($lecturer['Lecturer']['secondaryphonenumber']); ?>&nbsp;</td>
-		<td><?php echo h($lecturer['Lecturer']['address']); ?>&nbsp;</td>
-		<td><?php echo h($lecturer['Lecturer']['nationality']); ?>&nbsp;</td>
+
 		<td><?php echo h($lecturer['Lecturer']['email']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $lecturer['Lecturer']['id'])); ?>

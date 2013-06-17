@@ -12,7 +12,10 @@ class LecturersController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function index($id = null) {
+		$this->paginate = array(
+			'conditions' => array('Lecturer.institution_id' => $this->getInstitutionId($id)),
+		);
 		$this->Lecturer->recursive = 0;
 		$this->set('lecturers', $this->paginate());
 	}
@@ -40,6 +43,7 @@ class LecturersController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Lecturer->create();
+			$this->request->data['Lecturer']['institution_id'] = $this->getInstitutionId();
 			if ($this->Lecturer->save($this->request->data)) {
 				$this->Session->setFlash(__('The lecturer has been saved'));
 				$this->redirect(array('action' => 'index'));
@@ -64,6 +68,7 @@ class LecturersController extends AppController {
 			throw new NotFoundException(__('Invalid lecturer'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+			$this->request->data['Lecturer']['institution_id'] = $this->getInstitutionId();
 			if ($this->Lecturer->save($this->request->data)) {
 				$this->Session->setFlash(__('The lecturer has been saved'));
 				$this->redirect(array('action' => 'index'));

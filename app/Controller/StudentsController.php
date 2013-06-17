@@ -12,7 +12,10 @@ class StudentsController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function index($id = null) {
+		$this->paginate = array(
+			'conditions' => array('Student.institution_id' => $this->getInstitutionId($id)),
+		);
 		$this->Student->recursive = 0;
 		$this->set('students', $this->paginate());
 	}
@@ -40,6 +43,8 @@ class StudentsController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Student->create();
+			$this->request->data['Student']['institution_id'] = $this->getInstitutionId();
+			
 			if ($this->Student->save($this->request->data)) {
 				$this->Session->setFlash(__('The student has been saved'));
 				$this->redirect(array('action' => 'index'));
@@ -64,6 +69,8 @@ class StudentsController extends AppController {
 			throw new NotFoundException(__('Invalid student'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+			$this->request->data['Student']['institution_id'] = $this->getInstitutionId();
+			
 			if ($this->Student->save($this->request->data)) {
 				$this->Session->setFlash(__('The student has been saved'));
 				$this->redirect(array('action' => 'index'));

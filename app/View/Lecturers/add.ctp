@@ -6,7 +6,7 @@
 		echo $this->Form->input('lecturercode');
 		echo $this->Form->input('firstname');
 		echo $this->Form->input('lastname');
-		echo $this->Form->input('institution_id');
+
 		echo $this->Form->input('primaryphonenumber');
 		echo $this->Form->input('secondaryphonenumber');
 		echo $this->Form->input('address');

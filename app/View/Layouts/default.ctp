@@ -58,7 +58,7 @@ $description = __d('title', 'Your Kanban Board');
                         <span class="icon-bar"></span>
                     </a>
                   
-                    <?php echo $this->Html->link(__($app_name), array('controller' => 'pages', 'action' => 'home'), array('class' => 'brand')); ?> 
+                    <?php echo $this->Html->link(__($app_name), array('controller' => 'institutions', 'action' => 'index'), array('class' => 'brand')); ?> 
                        
                     <?php if ($user_details) { ?>
                         <div class="nav-collapse">
@@ -67,9 +67,13 @@ $description = __d('title', 'Your Kanban Board');
                        
                        
                                 <li><?php echo $this->Html->link(__('Institutions'), array('controller' => 'institutions', 'action' => 'index')); ?> </li>
+								<?php if($institution_id) { ?>
 								<li><?php echo $this->Html->link(__('Courses'), array('controller' => 'courses', 'action' => 'index')); ?> </li>
-                                <li><?php echo $this->Html->link(__('Students'), array('controller' => 'lecturers', 'action' => 'index')); ?> </li>
+                                <li><?php echo $this->Html->link(__('Students'), array('controller' => 'students', 'action' => 'index')); ?> </li>
 								<li><?php echo $this->Html->link(__('Lecturers'), array('controller' => 'lecturers', 'action' => 'index')); ?> </li>
+								<?php } ?>
+								<li><?php echo $this->Html->link(__('Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
+								<li><?php echo $this->Html->link(__('Groups'), array('controller' => 'groups', 'action' => 'index')); ?> </li>
                        
                             </ul>
 

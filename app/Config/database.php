@@ -62,9 +62,9 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => '127.0.0.1',
+		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'camron1',
+		'password' => '',
 		'database' => 'nta_database',
 		'prefix' => '',
 		//'encoding' => 'utf8',

@@ -3,23 +3,23 @@
 	<fieldset>
 		<legend><?php echo __('Add Student'); ?></legend>
 	<?php
-		echo $this->Form->input('institution_id');
+		echo $this->Form->input('studentcode', array('label' => 'Student Code'));
 		echo $this->Form->input('firstname');
 		echo $this->Form->input('middlename');
 		echo $this->Form->input('lastname');
 		echo $this->Form->input('gender');
 		echo $this->Form->input('nationality');
 		echo $this->Form->input('role');
-		echo $this->Form->input('dateofbirth');
+		echo $this->Form->input('dateofbirth', array('label' => 'Date Of Birth'));
 		echo $this->Form->input('address');
 		echo $this->Form->input('status');
-		echo $this->Form->input('hasgraduated');
+		echo $this->Form->input('hasgraduated', array('label' => 'Has Graudated'));
 		echo $this->Form->input('major');
 		echo $this->Form->input('email');
-		echo $this->Form->input('primaryphonenumber');
-		echo $this->Form->input('secondaryphonenumber');
+		echo $this->Form->input('primaryphonenumber', array('label' => 'Primary Phone Number'));
+		echo $this->Form->input('secondaryphonenumber', array('label' => 'Secondary Phone Number'));
 		echo $this->Form->input('fax');
-		echo $this->Form->input('studentcode');
+		
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
